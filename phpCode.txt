@@ -1,0 +1,140 @@
+UserCategory.php
+
+<?php include("header.php") ?>
+
+<body>
+
+    <div class="container mt-5 mb-5">
+        <div class="d-flex justify-content-center row">
+            <?php
+
+            include_once("config.php");
+            $id = $_GET['c_id'];
+            $que = "SELECT * FROM category WHERE c_id=" . $id;
+            // echo $que;
+            $result = mysqli_query($con, $que);
+
+
+            $row = mysqli_fetch_assoc($result);
+
+
+            ?>
+
+            <center><u style="color:black;"><b>
+                        <h2 style="color:black">
+                            <?php echo ($row['c_name']); ?>
+                        </h2>
+                    </b></u></center>
+
+            <div class="col-md-10">
+
+                <?php
+                include_once("config.php");
+                $id = $_GET['c_id'];
+                $que = "SELECT * FROM product inner join category WHERE category.c_id=" . $id . " AND product.c_id=" . $id;
+                // echo $que;
+                $result = mysqli_query($con, $que);
+                ?>
+
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+
+                    <div class="row p-2 bg-white border rounded mt-2" style="flex-wrap:nowrap !important">
+                        <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image"
+                                src="../img/hp.jpeg"></div>
+                        <div class="col-md-6 mt-1">
+                            <h5><?php echo($row['c_name']);?></h5>
+                            <div class="d-flex flex-row">
+                                <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                        class="fa fa-star"></i><i class="fa fa-star"></i></div><span>Business Laptop
+                                    PC</span>
+                            </div>
+                            <div class="mt-1 mb-1 spec-1"><span><?php echo($row['p_discription']);?></span></div>
+                            <!-- <div class="mt-1 mb-1 spec-1"></div> -->
+                            <!-- <p class="text-justify text-truncate para mb-0">There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered alteration in some form, by injected humour,
+                            or randomised words which don't look even slightly believable.<br><br></p> -->
+                        </div>
+                        <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                            <div class="d-flex flex-row align-items-center">
+                                <h4 class="mr-1"><?php echo($row['p_price']);?></h4>
+                            </div>
+                            <h6 class="text-success">Free shipping</h6>
+                            <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">
+                                <a href="UserProductPage.php?product_id=<?php echo($row['product_id']); ?>" class="text-white text-decoration-none">Details</a></button><button
+                                    class="btn btn-outline-primary btn-sm mt-2" type="button">Add to wishlist</button></div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
+    <?php include("footer.php") ?>
+
+
+    ++++++++++++++++++++++++++++++++++++
+
+
+    UserProperty.php
+
+    +++++++++++++++++++++++++++++++++++++
+
+
+    <?php include("header.php") ?>
+
+<body>
+  <?php
+  include_once("config.php");
+  $id = $_GET['product_id'];
+  $que = "SELECT * FROM product WHERE product.product_id=" . $id . "";
+  // echo $que;
+  $result = mysqli_query($con, $que);
+  ?>
+
+  <?php
+  while ($row = mysqli_fetch_assoc($result)) {
+    ?>
+
+    <div class="container py-4 my-4 mx-auto d-flex flex-column">
+      <div class="header">
+        <div class="row r1">
+          <div class="col-md-9 abc">
+            <h1>
+              <?php echo ($row['p_name']); ?>
+            </h1>
+          </div>
+          <div class="col-md-3 text-right pqr"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+              class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+          <p class="text-right para">Based on 250 Review</p>
+        </div>
+      </div>
+      <div class="container-body mt-4">
+        <div class="row r3">
+          <div class="col-md-6 p-0 klo">
+            <pre class="overflow-hidden d-flex p-2 h5">
+                <code>
+                <?php echo ($row['p_discription']); ?> 
+                </code>
+            </pre>
+            <div class="col">
+              <a href="#" class="btn btn-success btn-block">Add to cart</a>
+            </div>
+          </div>
+          <div class="col-md-6"> <img src="../img/<?php echo ($row['p_img']); ?>" width="90%" height="95%"> </div>
+        </div>
+      </div>
+
+      <div class="footer d-flex flex-column mt-5" style="background-color: #f2f2f2;">
+
+        <a href="index.php" class="text-center text-decoration-none fw-bold">
+          <<< Back To Home </a>
+      </div>
+    </div>
+  <?php } ?>
+
+  <?php include("footer.php") ?>
+
+
+  +++++++++++++++++++++++++++++++++++++++++++++++++++++
