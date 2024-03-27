@@ -186,7 +186,7 @@ button a {
 }
 
 .bg-main {
-    height: 80vh;
+    height: 88vh;
     position: relative;
 }
 
@@ -258,7 +258,7 @@ button a {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding: 6rem 0;
+    /* padding: 6rem 0; */
     overflow: hidden;
 }
 
@@ -412,6 +412,7 @@ button a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     position: relative;
     color: var(--main-color);
 }

@@ -1,12 +1,12 @@
 <?php
 include 'header.php';
-include 'login.php';
+// include 'login.php';
 ?>
 <section class="section-contact">
     <div class="overly-contact"></div>
     <div class="container">
         <h1 class="text-center p-2">Contact Us</h1>
-        <p class="tetx-center mb-4 fs-4">"Reach out to us for any inquiries, assistance, or feedback. Our team is here to support you and ensure your experience with us is seamless.Feel free to contact us anytime."
+        <p class="tetx-center mb-4 fs-5">"Reach out to us for any inquiries, assistance, or feedback. Our team is here to support you and ensure your experience with us is seamless.Feel free to contact us anytime."
         </p>
         <div class="contact d-flex justify-content-between">
             <div class="contact-box d-flex flex-column">
@@ -41,7 +41,7 @@ include 'login.php';
             </div>
 
             <div class="Contact-form">
-                <h2 class="fw-bold mb-3">Send Message</h2>
+                <h2 class="fw-bold mb-2">Send Message</h2>
                 <form action="" class="100w">
                     <div class="row">
                         <div class="mb-3 col-12 col-lg-6">
@@ -69,3 +69,8 @@ include 'login.php';
         </div>
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="./js/script.js"></script>

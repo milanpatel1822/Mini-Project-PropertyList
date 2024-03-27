@@ -24,14 +24,17 @@
                     <li class="nav-item">
                         <a class="nav-link active fw-bolder" aria-current="page" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active fw-bolder" href="#">About</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bolder" href="contact.php">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bolder" href="UserCategory.php">Buy / Sell Propertys</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active fw-bolder" href="#" id="login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active fw-bolder" href="contact.php">Contact</a>
                     </li>
                 </ul>
             </div>
